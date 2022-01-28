@@ -1,0 +1,11 @@
+on armor equip:
+	if line 2 of lore of event-item contains "&eBrightest star in the sky tonight":
+		apply night vision to the player for 999 days
+		wait 1 tick
+		while line 2 of lore of player's helmet contains "&eBrightest star in the sky tonight":
+			wait 5 ticks
+		remove night vision from the player
+
+on armor unequip:
+	if line 2 of lore of event-item contains "&eBrightest star in the sky tonight":
+		remove night vision from the player

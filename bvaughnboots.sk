@@ -1,0 +1,14 @@
+on armor equip:
+	if lore of event-item contains "Bvaughn ran right out of his shoes":
+		apply speed 3 to player for 9999 days
+		apply jump 4 to the player for 999 days
+		wait 1 tick
+		while lore of player's boots contains "Bvaughn ran right out of his shoes":
+			wait 5 ticks
+		remove speed from player
+		remove jump from player
+
+on armor unequip:
+	if line 1 of lore of event-item contains "Bvaughn ran right out of his shoes":
+		remove speed from player
+		remove jump from player

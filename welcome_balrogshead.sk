@@ -1,0 +1,22 @@
+on damage:
+	if line 1 of lore of victim's helmet contains "&7Lava Immunity":
+		damage cause is lava
+		cancel event
+
+on right click:
+	if line 2 of lore of player's held item contains "&4The head of a powerful demon":
+		cancel event
+	if line 2 of lore of player's off hand item contains "&4The head of a powerful demon":
+		cancel event
+
+# this is the correct code to stop placement of rares but allow people to open
+# chests/interact with blocks while holding them
+
+# this still allows placement on the side of blocks ? only for this item....
+
+#on place of ender dragon head item:
+#	send "%event-item%"
+#	if line 2 of lore of player's held item contains "&4The head of a powerful demon":
+#		cancel event
+#	else if line 2 of lore of player's off hand item contains "&4The head of a powerful demon":
+#		cancel event

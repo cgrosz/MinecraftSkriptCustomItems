@@ -1,0 +1,29 @@
+#Name: Vaccine
+#Effect: Clears all effects applied to another player. Unplaceable
+#Cooldown: 4 Hours
+
+# reset cooldowns on server restart to prevent it from being stuck in unusable state
+on skript load:
+    loop {Vaccines_On_Cooldown::*}:
+        set {cooldown.vaccine.%loop-value%} to false
+
+on right click on player:
+    if line 1 of lore of player's held item contains "test vaccine":
+        if {cooldown.vaccine.%player's uuid%} isn't set:
+                set {cooldown.vaccine.%player's uuid%} to false
+            if {cooldown.vaccine.%player's uuid%} is true:
+                send "&7This item needs to cooldown for 4 hours" to player
+                add player's uuid to {Vaccines_On_Cooldown::*} 
+            if {cooldown.vaccine.%player's uuid%} is false:
+                set {cooldown.vaccine.%player's uuid%} to true
+                
+                clear all effects from event-player
+                
+                #log "%player% (%player's uuid%) used Vaccine in %world% at location %location of player% to 'Vaccine_Uses.log'"
+                wait 4 hours
+                set {cooldown.vaccine.%player's uuid%} to false
+                remove player's uuid from {Vaccines_On_Cooldown::*}
+
+on place:
+    if line 1 of lore of event-block contains "test vaccine":
+        cancel event

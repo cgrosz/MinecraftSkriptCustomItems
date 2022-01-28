@@ -1,0 +1,48 @@
+on right click:
+    if line 2 of lore of player's off hand item contains "&7to enchant a held pickaxe with Auto Smelter":
+        if player's held item is pickaxe:
+            set {_tool} to player's held item
+            set {_lore::*} to lore of player's tool
+            
+            set {_hasAutoSmelt} to false
+            set {_count} to 1
+            loop {_lore::*}:
+                if "%{_lore::%{_count}%}%" is "&7Auto Smelter Enchant":
+                    set {_hasAutoSmelt} to true
+                add 1 to {_count}
+            
+            if {_hasAutoSmelt} is true:
+                send "This item is already enchanted with Auto Smelter!"
+                stop
+            
+            add "&7Auto Smelter Enchant" to lore of player's held item
+            set player's offhand tool to air
+            send "You redeemed an Auto Smelter Enchant Token!"
+
+on mine of iron ore:
+    set {_lore::*} to lore of player's tool
+    set {_count} to 1
+    loop {_lore::*}:
+        if "%{_lore::%{_count}%}%" is "&7Auto Smelter Enchant":
+            set {_hasAutoSmelt} to true
+        add 1 to {_count}
+    send "%{_lore::*}%"
+    
+    if {_hasAutoSmelt} is true:
+        cancel event
+        set event-block to air
+        drop iron ingot at event-block
+
+on mine of gold ore:
+    set {_lore::*} to lore of player's tool
+    set {_count} to 1
+    loop {_lore::*}:
+        if "%{_lore::%{_count}%}%" is "&7Auto Smelter Enchant":
+            set {_hasAutoSmelt} to true
+        add 1 to {_count}
+    send "%{_lore::*}%"
+    
+    if {_hasAutoSmelt} is true:
+        cancel event
+        set event-block to air
+        drop gold ingot at event-block

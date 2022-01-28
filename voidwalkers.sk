@@ -1,0 +1,42 @@
+on any movement:
+    if line 1 of lore of player's boots contains "Traverse the end":
+        if {gliding::%player%} is not set:
+            set {gliding::%player%} to true
+            apply levitation 0 without particles to player for 100 days
+    else:
+        if {gliding::%player%} is set:
+            delete {gliding::%player%}
+            remove levitation from player
+
+on join:
+    if {gliding::%player%} is set:
+        remove levitation from player
+        apply levitation 0 without particles to player for 100 days
+
+command /testmod:
+    permission: minecraft.op
+    trigger:
+        #<none>
+        #set {_x} to ("sweet" parsed as int)
+        #send "%{_x}%" to player
+        #10
+        set {_y} to ("10" parsed as int)
+        send "%{_y}%" to player
+
+#every 3 seconds in "world":
+#    loop all players:
+#        if loop-player has levitation:
+#            if line 1 of lore of loop-player's boots contains "Traverse the end":
+#                loop dropped items in radius 2 around loop-player:
+#                    send "%loop-value-2%" to loop-player # examples: "dropped 6 pumpkins", "dropped seeds"
+#                    set {_droppedItemSplit::*} to split "%loop-value-2%" at "dropped " # remove "dropped" and give player correct ammount
+#                    send "%{_droppedItemSplit::*}%" to loop-player
+#                    send "%{_droppedItemSplit::1}%" to loop-player
+#                    give loop-player {_droppedItemSplit::1}
+#
+#                   #set {_testParse} to ({_droppedItemSplit::2} parsed as int)
+#                    #if {_testParse} = "<none>":
+#                    #    execute console command "minecraft:give %loop-player% 
+#                    
+#                    #if mod(({_droppedItemSplit::2} parsed as int),65) != 0:
+

@@ -1,0 +1,17 @@
+# this prevent rares from being renamed
+#on anvil combine:
+#	set {_lore::*} to lore of event-item-one
+	#send "%{_lore::*}%"
+#	if {_lore::*} is set:
+#		set {_item} to "%event-item-one%"
+#		send "%{_item}%"
+#		set {_name::*} to {_item} split at "named "
+#
+		# {_name::2} is the name of the rare
+		# send "%{_name::2}%"
+#
+#		set name of event-item-two to "%{_name::2}%"
+
+on anvil rename:
+	if name of event-item contains "§":
+		cancel event

@@ -1,0 +1,17 @@
+at 06:00:
+    set {lootcraft.isDay} to true
+    set {lootcraft.isNight} to false
+
+at 18:00:
+    set {lootcraft.isDay} to false
+    set {lootcraft.isNight} to true
+
+
+every 10 seconds in "world":
+    loop all players:
+        if line 3 of lore of loop-player's boots contain "&fA sacred pair of boots, known for":
+            if {lootcraft.isDay} is true:
+                apply slowness 2 to loop-player for 10 seconds
+            else if {lootcraft.isNight} is true:
+                apply speed 2 to loop-player for 10 seconds
+            

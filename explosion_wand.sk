@@ -1,0 +1,25 @@
+#Name: Explosion Wand
+#Effect: Deals TNT damage to all players within 5 blocks. Unplaceable
+#Cooldown: 15 Seconds
+
+on right click:
+    if line 1 of lore of attacker's held item contains "test explo wand":
+        if {cooldown.levitation_wand.%player's uuid%} isn't set:
+                set {cooldown.levitation_wand.%player's uuid%} to false
+            if {cooldown.levitation_wand.%player's uuid%} is true:
+                send "&7This item needs to cooldown for 7 seconds" to player
+            if {cooldown.levitation_wand.%player's uuid%} is false:
+                set {cooldown.levitation_wand.%player's uuid%} to true
+                
+                loop all players in radius 5 of the player:
+                    if player can build at location of loop-player:
+                        if location of loop-player is air:
+                            create a explosion of force 5 at the loop-player
+
+                #log "%player% (%player's uuid%) used Levitation Wand in %world% at location %location of player% to 'Levitation_Wand_Uses.log'"
+                wait 15 seconds
+                set {cooldown.levitation_wand.%player's uuid%} to false
+
+on place:
+    if line 1 of lore of event-block contains "test explo wand":
+        cancel event

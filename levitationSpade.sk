@@ -1,0 +1,4 @@
+on damage:
+	if lore of attacker's held item contains "Levitation I":
+		if victim does not have levitation:
+			apply levitation to the victim for 5 seconds

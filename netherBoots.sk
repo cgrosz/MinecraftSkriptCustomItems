@@ -1,0 +1,9 @@
+on damage:
+    if line 1 of lore of victim's boots contains "nether boots":
+        set {_var} to false
+        if damage was caused by lava:
+            set {_var} to true
+        else if damage was caused by fire:
+            set {_var} to true
+        if {_var} is true:
+            cancel event

@@ -1,0 +1,12 @@
+on mine:
+    if line 1 of lore of player's held item contains "Designed exclusively":
+        if line 2 of lore of player's held item contains "for the miners":
+            if event-block is cobblestone:
+                clear drops
+                drop 1 stone at event-location
+            else if event-block is iron ore:
+                clear drops
+                drop 1 iron ingot at event-location
+            else if event-block is gold ore:
+                clear drops
+                drop 1 gold ingot at event-location

@@ -1,0 +1,19 @@
+every 10 seconds in "world":
+    loop all players:
+        if line 1 of lore of loop-player's helmet contains "&eEos Set Effect":
+            if line 1 of lore of loop-player's chestplate contains "&eEos Set Effect":
+                if line 1 of lore of loop-player's leggings contains "&eEos Set Effect":
+                    if line 1 of lore of loop-player's boots contains "&eEos Set Effect":
+                        apply speed 3 to the loop-player for 10 seconds
+
+on place of player head:
+    if line 1 of lore of player's held item contains "&eEos Set Effect":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&eEos Set Effect":
+        cancel event
+
+on place of player wall head:
+    if line 1 of lore of player's held item contains "&eEos Set Effect":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&eEos Set Effect":
+        cancel event

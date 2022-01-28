@@ -1,0 +1,10 @@
+on damage:
+	if line 1 of lore of attacker's held item contains "&7Wither I":
+		if victim does not have wither:
+			apply wither to the victim for 3 seconds
+
+on place of wither rose:
+    if line 1 of lore of player's held item contains "&7Wither I":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&7Wither I":
+        cancel event

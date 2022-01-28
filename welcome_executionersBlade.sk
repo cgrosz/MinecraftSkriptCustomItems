@@ -1,0 +1,7 @@
+on death of player:
+	if line 1 of lore of attacker's held item contains "&7Beheading I":
+		attacker is a player
+		victim is a player
+		set death message to ""
+		set {_head} to skull of "%victim%" parsed as offlineplayer
+		drop {_head} named "&c%victim%'s Head" with lore "&4Killed by %attacker% on %now%" at attacker

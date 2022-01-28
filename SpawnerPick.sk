@@ -1,0 +1,14 @@
+on break of mob spawner:
+    if line 1 of lore of player's held item contains "&8Pick up 1 mob spawner with this pickaxe.":
+        drop the event-block
+        # set {_nbt} to nbt of event-block
+        # drop mob spawner with nbt "{_nbt}"
+        delete the player's held item
+
+#        set {_s} to "%nbt of event-block%"
+#        set {_s::*} to {_s} split at """"				# get like minecraft:polar_bear
+#        set {_entity} to {_s::2}
+#        set {_entity_name} to {_s::2}
+#        replace "minecraft:" in {_entity_name} with ""
+#        replace "_" in {_entity_name} with " "
+#        drop mob spawner with nbt "{BlockEntityTag:{SpawnData:{id:""%{_entity}%""},id:""minecraft:mob_spawner"",SpawnPotentials:[0:{Entity:{id:""%{_entity}%""},Weight:1}]},display:{Name:""&e%{_entity_name}% spawner""}}" with lore "%{_entity_name}% spawner"		#lore can always defind the spawner type even player change name scam      

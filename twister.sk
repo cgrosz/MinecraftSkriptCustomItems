@@ -1,0 +1,67 @@
+command /twister <integer>:
+    permission: minecraft.op
+    trigger:
+        # 53 69 -100 -> 81 69 -100
+        # 81 69 -100 -> 81 69 -64
+        # 81 69 -64 -> 53 69 -64
+        # 53 69 -64 -> 53 69 -100
+
+        set {_r1} to a random integer between 53 and 81
+        set {_r2} to a random integer between -100 and -64
+        set {_r3} to a random integer between 53 and 81
+        set {_r4} to a random integer between -100 and -64
+
+        set {Twisterworld} to world of player
+
+        set block at location({_r1}, 68, -100, {Twisterworld}) to redstone block
+        set block at location(81, 68, {_r2}, {Twisterworld}) to redstone block
+        set block at location({_r3}, 68, -64, {Twisterworld}) to redstone block
+        set block at location(53, 68, {_r4}, {Twisterworld}) to redstone block
+        wait 10 ticks
+
+        set {_runtime} to 0
+        while {_runtime} is less than arg-1:
+            set {_r1change} to a random integer between -1 and 1
+            set {_r2change} to a random integer between -1 and 1
+            set {_r3change} to a random integer between -1 and 1
+            set {_r4change} to a random integer between -1 and 1
+
+            set {_r1} to {_r1}+{_r1change}
+            while {_r1} is less than 53:
+                set {_r1change} to a random integer between -1 and 1
+                set {_r1} to {_r1}+{_r1change}
+            while {_r1} is greater than 81:
+                set {_r1change} to a random integer between -1 and 1
+                set {_r1} to {_r1}+{_r1change}
+
+            set {_r2} to {_r2}+{_r2change}
+            while {_r2} is less than -100:
+                set {_r2change} to a random integer between -1 and 1
+                set {_r2} to {_r2}+{_r2change}
+            while {_r2} is greater than -64:
+                set {_r2change} to a random integer between -1 and 1
+                set {_r2} to {_r2}+{_r2change}
+
+            set {_r3} to {_r3}+{_r3change}
+            while {_r3} is less than 53:
+                set {_r3change} to a random integer between -1 and 1
+                set {_r3} to {_r3}+{_r3change}
+            while {_r3} is greater than 81:
+                set {_r3change} to a random integer between -1 and 1
+                set {_r3} to {_r3}+{_r3change}
+
+            set {_r4} to {_r4}+{_r4change}
+            while {_r4} is less than -100:
+                set {_r2change} to a random integer between -1 and 1
+                set {_r4} to {_r4}+{_r4change}
+            while {_r4} is greater than -64:
+                set {_r4change} to a random integer between -1 and 1
+                set {_r4} to {_r4}+{_r4change}
+
+            set block at location({_r1}, 68, -100, {Twisterworld}) to redstone block
+            set block at location(81, 68, {_r2}, {Twisterworld}) to redstone block
+            set block at location({_r3}, 68, -64, {Twisterworld}) to redstone block
+            set block at location(53, 68, {_r4}, {Twisterworld}) to redstone block
+
+            add 1 to {_runtime}
+

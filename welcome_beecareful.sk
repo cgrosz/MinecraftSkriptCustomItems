@@ -1,0 +1,4 @@
+on right click:
+	if line 3 of lore of player's held item contains "&4&oUse when in a sticky situation":
+		teleport player to location at 800, 162, 703 in world "world"
+		set player's held item to air

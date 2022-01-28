@@ -1,0 +1,46 @@
+import:
+	us.donut.skuniversal.griefprevention.GriefPreventionHook
+	java.util.ArrayList
+
+function playerIsTrusted(player: player, location: location) :: boolean:
+	set {_ids::*} to ids of the claims at {_location} 
+	if {_ids::*} is set:
+		set {_claim} to GriefPreventionHook.getClaim({_ids::1})
+		if {_claim} is set:
+			set {_trusted} to new ArrayList()
+			{_claim}.getPermissions({_trusted}, new ArrayList(), new ArrayList(), and new ArrayList())
+			loop ...{_trusted}:
+				if "%loop-value%" is {_player}'s uuid:
+					return true
+			return false
+            
+
+on leftclick with diamond pickaxe:
+	lore of tool contains "&4&lBedrock Remaining"
+	if playerIsTrusted(player, clicked block) is true:
+		if event-block is bedrock:
+			if event-block's y-coordinate is greater than 1:
+				if lore of tool contains "&4&lBedrock Remaining:5":
+					set lore of tool to "&4&lBedrock Remaining:4"
+					set event-block to air
+					drop 1 bedrock at event-block
+				else if lore of tool contains "&4&lBedrock Remaining:4":
+					set lore of tool to "&4&lBedrock Remaining:3"
+					set event-block to air
+					drop 1 bedrock at event-block
+				else if lore of tool contains "&4&lBedrock Remaining:3":
+					set lore of tool to "&4&lBedrock Remaining:2"
+					set event-block to air
+					drop 1 bedrock at event-block
+				else if lore of tool contains "&4&lBedrock Remaining:2":
+					set lore of tool to "&4&lBedrock Remaining:1"
+					set event-block to air
+					drop 1 bedrock at event-block
+				else if lore of tool contains "&4&lBedrock Remaining:1":
+					set event-block to air
+					drop 1 bedrock at event-block
+					delete player's held item
+			else:
+				message "&4You almost mined into the void!"
+
+#/give I_Dont_need_help diamond_pickaxe 1 name:&8&lB&7&le&8&ld&7&lr&8&lo&7&lc&8&lk_&7&lB&8&lr&7&le&8&la&7&lk&8&le&7&lr lore:&4&lBedrock_Remaining:5         

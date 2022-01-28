@@ -1,0 +1,14 @@
+on armor equip:
+	if line 3 of lore of event-item contains "&9How do you think Flowers got ON the moon?":
+		apply jump 2 to the player for 999 days
+		apply slow falling to the player for 999 days
+		wait 1 tick
+		while line 3 of lore of player's boots contains "&9How do you think Flowers got ON the moon?":
+			wait 5 ticks
+		remove slow falling from player
+		remove jump from player
+
+on armor unequip:
+	if line 3 of lore of event-item contains "&9How do you think Flowers got ON the moon?":
+		remove jump from the player
+		remove slow falling from the player

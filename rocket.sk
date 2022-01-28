@@ -1,0 +1,5 @@
+on right click:
+    if line 1 of lore of player's held item contains "rocket1":
+        loop 20 times:
+            push player forwards at speed 4
+            wait 0.5 seconds

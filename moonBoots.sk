@@ -1,0 +1,9 @@
+on armor equip:
+    if line 1 of lore of event-item contains "moon boots":
+        apply jump 3 to the player for 999 days
+        apply slow falling to the player for 999 days
+
+on armor unequip:
+    if line 1 of lore of event-item contains "moon boots":
+        remove jump from the player 
+        remove slow falling from the player

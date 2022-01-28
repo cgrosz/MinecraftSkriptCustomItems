@@ -1,0 +1,13 @@
+on damage:
+    if line 1 of lore of victim's held item contains "&7No Drowning Damage":
+        if "%damage cause%" is "drowning":
+            cancel event
+    if line 1 of lore of victim's off hand item contains "&7No Drowning Damage":
+        if "%damage cause%" is "drowning":
+            cancel event
+
+on place of blue orchid:
+    if line 1 of lore of player's held item contains "&7No Drowning Damage":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&7No Drowning Damage":
+        cancel event

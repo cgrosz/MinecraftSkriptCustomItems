@@ -1,0 +1,26 @@
+every 10 seconds in "world":
+    loop all players:
+        if line 3 of lore of loop-player's held item contains "&eThe best way to roll into Summer!":
+            apply jump 2 to the loop-player for 10 seconds
+        else if line 3 of lore of loop-player's off hand item contains "&eThe best way to roll into Summer!":
+            apply jump 2 to the loop-player for 10 seconds
+
+on damage:
+    if line 3 of lore of victim's held item contains "&eThe best way to roll into Summer!":
+        if "%damage cause%" is "fall":
+            cancel event
+    if line 3 of lore of victim's off hand item contains "&eThe best way to roll into Summer!":
+        if "%damage cause%" is "fall":
+            cancel event
+
+on place of player head:
+    if line 3 of lore of player's held item contains "&eThe best way to roll into Summer!":
+        cancel event
+    else if line 3 of lore of player's off hand item contains "&eThe best way to roll into Summer!":
+        cancel event
+
+on place of player wall head:
+    if line 3 of lore of player's held item contains "&eThe best way to roll into Summer!":
+        cancel event
+    else if line 3 of lore of player's off hand item contains "&eThe best way to roll into Summer!":
+        cancel event

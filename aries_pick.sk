@@ -1,0 +1,11 @@
+on mine:
+    if event-block is ancient debris:
+        if line 1 of lore of player's held item contains "aries pick":
+            set {_rng} to a random integer between 1 and 3
+            if {_rng} is 2:
+                drop ancient debris at location of event-block
+                drop ancient debris at location of event-block
+                drop diamond at location of event-block
+            else:
+                drop ancient debris at location of event-block
+                drop diamond at location of event-block

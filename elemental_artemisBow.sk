@@ -1,0 +1,7 @@
+on projectile hit:
+	shooter is holding a bow
+	if lore of shooter's tool contains "&7Teleport to your arrows!":
+		set {_block} to the block at location 0.1 in front of the projectile
+		if the block above {_block} is air:
+			if the block 2 above {_block} is air:
+				teleport shooter to {_block}

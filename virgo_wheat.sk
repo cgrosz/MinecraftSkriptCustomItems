@@ -1,0 +1,3 @@
+on right click:
+    if line 1 or lore of player's held item contains "Seed planter":
+        send "%event-block%"

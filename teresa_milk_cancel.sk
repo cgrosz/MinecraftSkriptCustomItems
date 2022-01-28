@@ -1,0 +1,5 @@
+on consume:
+    if line 1 of lore of event-item contains "&7Deliver this":
+        if line 2 of lore of event-item contains "&7to Teresa":
+            cancel event
+            send "&7Ava said this was important... I shouldn't drink it." to player

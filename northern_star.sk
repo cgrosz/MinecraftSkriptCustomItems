@@ -1,0 +1,23 @@
+on right click:
+    if line 1 of lore of player's held item contains "tracker":
+        if world of player is not "world":
+            send "You can only use this in the overworld."
+            stop
+        set {_user} to player
+        set {_world} to world of player
+        set {_minDist} to 100000
+        loop all players in "world":
+            if loop-player is not {_user} or "Apprentice" or "Guild Banker" or "Registrar" or "Guild Master":
+                #send "%loop-player%"
+                set {_dist} to the distance between {_user} and loop-player
+                if {_dist} is less than {_minDist}:
+                    #send "%{_dist}%"
+                    set {_minDist} to {_dist}
+                    set {_trackedPlayer} to loop-player
+
+        #send "%{_trackedPlayer}%"
+        set {_x} to round(x coordinate of {_trackedPlayer})
+        set {_y} to round(y coordinate of {_trackedPlayer})
+        set {_z} to round(z coordinate of {_trackedPlayer})
+        # make console execute "setworldspawn %{_x}% %{_y}% %{_z}%"
+        set player's compass target to location of {_trackedPlayer}

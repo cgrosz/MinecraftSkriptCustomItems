@@ -1,0 +1,23 @@
+every 10 seconds in "world":
+	loop all players:
+		if line 1 of lore of loop-player's held item contains "&7Nausea I":
+			apply nausea 1 to the loop-player for 10 seconds
+		if line 1 of lore of loop-player's off hand item contains "&7Nausea I":
+			apply nausea 1 to the loop-player for 10 seconds
+		if line 1 of lore of loop-player's helmet contains "&7Nausea I":
+			apply nausea 1 to the loop-player for 10 seconds
+
+#on right click:
+#	if line 1 of lore of player's held item contains "&7Nausea I":
+#		cancel event
+#	if line 1 of lore of player's off hand item contains "&7Nausea I":
+#		cancel event
+
+# this is the correct code to stop placement of rares but allow people to open
+# chests/interact with blocks while holding them
+on place of brown mushroom:
+	#send "%event-item%"
+	if line 1 of lore of player's held item contains "&7Nausea I":
+		cancel event
+	else if line 1 of lore of player's off hand item contains "&7Nausea I":
+		cancel event

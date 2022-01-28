@@ -1,0 +1,12 @@
+on right click:
+	if lore of player's held item contains "&aRight Click &fto blink to a location within 20 blocks":
+		if the distance between the player and targeted block is smaller than 20:
+			if {cooldown.luugem.%player%} isn't set:
+				set {cooldown.luugem.%player%} to false
+			if {cooldown.luugem.%player%} is false:
+				if the block above the targeted block is air:
+					if the block 2 above the targeted block is air:
+						set {cooldown.luugem.%player%} to true
+						teleport the player above the targeted block
+						wait 4 seconds
+						set {cooldown.luugem.%player%} to false

@@ -1,0 +1,4 @@
+every 60 seconds in "world":
+    loop all players:
+        if line 1 of lore of loop-player's chestplate contains "&aDon't farm XP, wear it!":
+            add 15 to xp of loop-player

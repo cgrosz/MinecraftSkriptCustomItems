@@ -1,0 +1,5 @@
+on damage:
+    if line 1 of lore of attacker's held item contains "blindness stick":
+        if victim doesn't have blindness:
+            apply blindness to the victim for 5 seconds
+        

@@ -1,0 +1,5 @@
+on place of lily of the valley:
+    if line 1 of lore of player's held item contains "&f◁ ◁ ◁ ◁ Air ◁ ◁ ◁ ◁":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&f◁ ◁ ◁ ◁ Air ◁ ◁ ◁ ◁":
+        cancel event

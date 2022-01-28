@@ -1,0 +1,31 @@
+on right click:
+    if line 1 of lore of player's held item contains "&dA stone born from various Constellations":
+        set {_enchant::*} to enchantments of player's held item
+        if "%{_enchant::1}%" is "Fire Aspect 4":
+            disenchant player's held item
+            enchant player's held item with sweeping edge 3
+        else if "%{_enchant::1}%" is "Sweeping Edge 3":
+            disenchant player's held item
+            enchant player's held item with fortune 4
+        else if "%{_enchant::1}%" is "Fortune 4":
+            disenchant player's held item
+            enchant player's held item with looting 2
+        else if "%{_enchant::1}%" is "Looting 2":
+            disenchant player's held item
+            enchant player's held item with Protection 5
+        else if "%{_enchant::1}%" is "Protection 5":
+            disenchant player's held item
+            enchant player's held item with fire aspect 4
+
+
+on place of player head:
+    if line 1 of lore of player's held item contains "&dA stone born from various Constellations":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&dA stone born from various Constellations":
+        cancel event
+
+on place of player wall head:
+    if line 1 of lore of player's held item contains "&dA stone born from various Constellations":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&dA stone born from various Constellations":
+        cancel event

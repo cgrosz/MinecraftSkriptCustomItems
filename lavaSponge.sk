@@ -1,0 +1,29 @@
+import:
+    us.donut.skuniversal.griefprevention.GriefPreventionHook
+    java.util.ArrayList
+
+#player needs to /trust themselves in thier own claimes to use the items
+#wont be able to use the item in unclaimed land
+function playerIsTrusted(player: player, location: location) :: boolean:
+    set {_ids::*} to ids of the claims at {_location} 
+    if {_ids::*} is set:
+        set {_claim} to GriefPreventionHook.getClaim({_ids::1})
+        if {_claim} is set:
+            set {_trusted} to new ArrayList()
+            {_claim}.getPermissions({_trusted}, new ArrayList(), new ArrayList(), and new ArrayList())
+            loop ...{_trusted}:
+                if "%loop-value%" is {_player}'s uuid:
+                    return true
+            return false
+#this allows the player to use the item in unclaimed land
+    else if {_ids::*} is not set:
+        return true
+
+on place of magma block:
+	# broadcast 'lava sponges plz fix'
+	if playerIsTrusted(player,event-block) is true:
+		if lore of player's held item contains "&4Sponges created in the underworld (single use)":
+			loop blocks in radius 4 around event-block:
+				if playerIsTrusted(player,loop-block) is true:
+					loop-block is equal to lava
+					set loop-blocks to air            

@@ -1,0 +1,8 @@
+on right click on dirt:
+    if line 1 of lore of player's held item contains "&7grass wand":
+        if player can build at location of event-block:
+            loop blocks in radius 2 of event-block:
+                if player can build at location of loop-block:
+                    if loop-block is dirt:
+                        if block at location above loop-block is air:
+                            set block at location of loop-block to grass block

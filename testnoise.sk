@@ -1,0 +1,19 @@
+on right click:
+    if line 1 of lore of player's held item is "animal":
+        send "%event-entity%" to player
+        event-entity is not a player
+        event-entity is not armor stand
+        event-entity is not item frame
+        event-entity is not oak boat
+        event-entity is not spruce boat
+        event-entity is not birch boat
+        event-entity is not jungle boat
+        event-entity is not acacia boat
+        event-entity is not dark oak boat
+        event-entity is not minecart
+        event-entity is not minecart with chest
+        event-entity is not minecart with furnace
+        event-entity is not minecart with tnt
+
+        
+        add "noise" to the scoreboard tags of event-entity

@@ -1,0 +1,10 @@
+on damage:
+	if lore of attacker's held item contains "&7Levitation I":
+		if victim does not have levitation:
+			apply levitation to the victim for 5 seconds
+
+on place:
+    if line 1 of lore of player's held item contains "&7Levitation I":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&7Levitation I":
+        cancel event

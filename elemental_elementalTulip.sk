@@ -1,0 +1,5 @@
+on place of red tulip:
+    if line 1 of lore of player's held item contains "&4△ △ △ △ Fire △ △ △ △":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&4△ △ △ △ Fire △ △ △ △":
+        cancel event

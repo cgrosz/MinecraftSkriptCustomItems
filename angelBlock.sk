@@ -1,0 +1,113 @@
+import:
+    us.donut.skuniversal.griefprevention.GriefPreventionHook
+    java.util.ArrayList
+
+#player needs to /trust themselves in thier own claimes to use the items
+#wont be able to use the item in unclaimed land
+function playerIsTrusted(player: player, location: location) :: boolean:
+    # broadcast "1"
+    set {_ids::*} to ids of the claims at {_location} 
+    if {_ids::*} is set:
+        # broadcast "2"
+        set {_claim} to GriefPreventionHook.getClaim({_ids::1})
+        # broadcast "%{_claim}%"
+        if {_claim} is set:
+            # broadcast "3"
+            set {_trusted} to new ArrayList()
+            {_claim}.getPermissions({_trusted}, new ArrayList(), new ArrayList(), and new ArrayList())
+            # broadcast "%...{_trusted}%"
+            loop ...{_trusted}:
+                if "%loop-value%" is {_player}'s uuid:
+                    return true
+            return false
+    else if {_ids::*} is not set:
+        return true
+
+
+on right click with glass:
+	if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 10)" or "&aRight Click &fto place a block in the air &6(Uses: 9)" or "&aRight Click &fto place a block in the air &6(Uses: 8)" or "&aRight Click &fto place a block in the air &6(Uses: 7)" or "&aRight Click &fto place a block in the air &6(Uses: 6)" or "&aRight Click &fto place a block in the air &6(Uses: 5)" or "&aRight Click &fto place a block in the air &6(Uses: 4)" or "&aRight Click &fto place a block in the air &6(Uses: 3)" or "&aRight Click &fto place a block in the air &6(Uses: 2)" or "&aRight Click &fto place a block in the air &6(Uses: 1)":
+		cancel event
+		if player's y-coordinate is less than 256:
+			if playerIsTrusted(player, block in front of the player):
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 10)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 9)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 9)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 8)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 8)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 7)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 7)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 6)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 6)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 5)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 5)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 4)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 4)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 3)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 3)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 2)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 2)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						set lore of player's held item to "&aRight Click &fto place a block in the air &6(Uses: 1)"
+				if lore of player's held item contains "&aRight Click &fto place a block in the air &6(Uses: 1)":
+					set {_inAir} to true
+					loop blocks in radius 2 of player:
+						if loop-block is not air:
+							set {_inAir} to false
+					if {_inAir} is true:
+						set block in front of the player to glass
+						remove 1 of player's held item from player's inventory
+
+			

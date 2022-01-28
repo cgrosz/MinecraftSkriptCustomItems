@@ -1,0 +1,7 @@
+on consume:
+    if line 5 of lore of event-item contains "&7A delightful nectar only made during summer.":
+        apply regeneration 2 to the player for 45 seconds
+        apply speed 3 to the player for 45 seconds
+        apply jump 3 to the player for 45 seconds
+        apply mining fatigue 3 to the player for 45 seconds
+        

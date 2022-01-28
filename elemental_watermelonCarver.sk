@@ -1,0 +1,41 @@
+on mine of oak log:
+    if line 1 of lore of player's held item contains "&aThis axe has a chance to turn logs into watermelon!":
+        chance of 33%:
+            cancel event
+            set event-block to air
+            drop a melon at the event-block
+
+on mine of spruce log:
+    if line 1 of lore of player's held item contains "&aThis axe has a chance to turn logs into watermelon!":
+        chance of 33%:
+            cancel event
+            set event-block to air
+            drop a melon at the event-block
+
+on mine of birch log:
+    if line 1 of lore of player's held item contains "&aThis axe has a chance to turn logs into watermelon!":
+        chance of 33%:
+            cancel event
+            set event-block to air
+            drop a melon at the event-block
+
+on mine of jungle log:
+    if line 1 of lore of player's held item contains "&aThis axe has a chance to turn logs into watermelon!":
+        chance of 33%:
+            cancel event
+            set event-block to air
+            drop a melon at the event-block
+
+on mine of acacia log:
+    if line 1 of lore of player's held item contains "&aThis axe has a chance to turn logs into watermelon!":
+        chance of 33%:
+            cancel event
+            set event-block to air
+            drop a melon at the event-block
+
+on mine of dark oak log:
+    if line 1 of lore of player's held item contains "&aThis axe has a chance to turn logs into watermelon!":
+        chance of 33%:
+            cancel event
+            set event-block to air
+            drop a melon at the event-block

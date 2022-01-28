@@ -1,0 +1,5 @@
+on damage:
+	if line 1 of lore of attacker's off hand item contains "&7Bulwark Effect":
+		increase damage by -50%
+	if line 1 of lore of attacker's helmet item contains "&7Bulwark Effect":
+		increase damage by -50%      

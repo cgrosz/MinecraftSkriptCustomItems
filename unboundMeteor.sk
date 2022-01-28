@@ -1,0 +1,12 @@
+every 10 seconds in "world":
+	loop all players:
+		if lore of loop-player's held item contains "&b&oAlmost Lighter Than &7&oAir&b&o...": 
+			apply slow falling to the loop-player for 10 seconds 
+		else if lore of loop-player's off hand item contains "&b&oAlmost Lighter Than &7&oAir&b&o...": 
+			apply slow falling to the loop-player for 10 seconds
+		else if lore of loop-player's helmet contains "&b&oAlmost Lighter Than &7&oAir&b&o...": 
+			apply slow falling to the loop-player for 10 seconds   
+
+on join:
+	if lore of player's held item contains "&b&oAlmost Lighter Than &7&oAir&b&o...": 
+		remove slow falling from the player                  

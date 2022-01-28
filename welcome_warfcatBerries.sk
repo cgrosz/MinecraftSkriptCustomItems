@@ -1,0 +1,19 @@
+on damage:
+	if line 1 of lore of attacker's held item contains "Poison Attack":
+		if victim does not have poison:
+			apply poison to the victim for 3 seconds
+
+#on right click:
+#	if line 1 of lore of player's held item contains "Poison Attack":
+#		cancel event
+#	if line 1 of lore of player's off hand item contains "Poison Attack":
+#		cancel event
+
+
+# this is the correct code to stop placement of rares but allow people to open
+# chests/interact with blocks while holding them
+on place of sweet berry bush plant:
+	if line 1 of lore of player's held item contains "Poison Attack":
+		cancel event
+	else if line 1 of lore of player's off hand item contains "Poison Attack":
+		cancel event

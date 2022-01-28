@@ -1,0 +1,18 @@
+on right click:
+    if line 3 of lore of player's held item contains "leo":
+        set {_dir} to direction from location of targeted entity to location of player
+        if the distance between the player and targeted entity is smaller than 10:
+            if player can build at location of the targeted entity:
+                push targeted entity {_dir} at speed 2
+
+on place of player head:
+    if line 1 of lore of player's held item contains "leo":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "leo":
+        cancel event
+
+on place of player wall head:
+    if line 1 of lore of player's held item contains "leo":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "leo":
+        cancel event

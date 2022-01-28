@@ -1,0 +1,13 @@
+on swap hand items:
+    if line 3 of lore of player's held item contains "When combined with it's Dextral, it":
+        if line 3 of lore of player's off hand item contains "When combined with it's Sinistral, it":
+            loop all entities in radius 5 of player:
+                if player can build at location of loop-entity:
+                    if the loop-entity is not armor stand:
+                        ignite the loop-entity
+    else if line 3 of lore of player's held item contains "When combined with it's Sinistral, it":
+        if line 3 of lore of player's off hand item contains "When combined with it's Dextral, it":
+            loop all entities in radius 5 of player:
+                if player can build at location of loop-entity:
+                    if the loop-entity is not armor stand:
+                        ignite the loop-entity

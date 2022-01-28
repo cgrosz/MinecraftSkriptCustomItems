@@ -1,0 +1,14 @@
+#on right click:
+#	if line 1 of lore of player's held item contains "&4&oCan you live up to his glory?":
+#		cancel event
+#	if line 1 of lore of player's off hand item contains "&4&oCan you live up to his glory?":
+#		cancel event
+
+# this is the correct code to stop placement of rares but allow people to open
+# chests/interact with blocks while holding them
+on place of unlit pumpkin:
+	#send "%event-item%"
+	if line 1 of lore of player's held item contains "&4&oCan you live up to his glory?":
+		cancel event
+	else if line 1 of lore of player's off hand item contains "&4&oCan you live up to his glory?":
+		cancel event

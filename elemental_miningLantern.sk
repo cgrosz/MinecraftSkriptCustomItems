@@ -1,0 +1,30 @@
+every 4 seconds in "world":
+    loop all players:
+        if line 1 of lore of loop-player's held item contains "&8Found at the bottom of a mineshaft,":
+            if loop-player's y coordinate is less than 50:
+                if loop-player can build at location of loop-player:
+                    set {_playerCoords1} to block below location of loop-player
+                    if block at {_playerCoords1} is solid:
+                        set {_playerCoords} to block above {_playerCoords1}
+                        if {_playerCoords} is air:
+                            set block at {_playerCoords} to torch
+                        wait 8 seconds
+                        if block at {_playerCoords} is torch:
+                            set block at {_playerCoords} to air
+        else if line 1 of lore of loop-player's off hand item contains "&8Found at the bottom of a mineshaft,":
+            if loop-player's y coordinate is less than 50:
+                if loop-player can build at location of loop-player:
+                    set {_playerCoords1} to block below location of loop-player
+                    if block at {_playerCoords1} is solid:
+                        set {_playerCoords} to block above {_playerCoords1}
+                        if {_playerCoords} is air:
+                            set block at {_playerCoords} to torch
+                        wait 8 seconds
+                        if block at {_playerCoords} is torch:
+                            set block at {_playerCoords} to air
+
+on place of lantern:
+    if line 1 of lore of player's held item contains "&8Found at the bottom of a mineshaft,":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&8Found at the bottom of a mineshaft,":
+        cancel event

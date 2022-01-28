@@ -1,0 +1,59 @@
+on break of stone, andesite, diorite or granite:
+	if lore of tool contains "&bIt's Like It's &lRaining &bDrops !!":
+		chance of 25%:
+			chance of 25%: #Drop a Rare Item (i.e. diamonds, sponge, emerald ores, gold, iron, etc)
+				chance of 2.2%:
+					drop a diamond
+					stop
+				chance of 5%:
+					drop a emerald ore
+					stop
+				chance of 5%:
+					drop a iron ingot
+					stop
+				chance of 12%:
+					drop a sponge
+					stop
+				chance of 10%:
+					drop a lapis ore
+					stop
+				chance of 15%:
+					drop a gold ingot
+					stop
+				chance of 15%:
+					drop a nether quartz ore
+					stop
+				chance of 35%:
+					drop a coal ore
+					stop
+				send "&5You recieved a rare drop"
+			chance of 75%: #Drop a Common Item (i.e. wheat, steak, coarse dirt, cobwebs, blaze rods)
+				chance of 10%:
+					drop a armor stand
+					stop
+				chance of 10%:
+					drop a cobweb
+					stop
+				chance of 10%:
+					drop a dead bush
+					stop
+				chance of 10%:
+					drop a experience bottle
+					stop
+				chance of 10%:
+					drop a tall grass
+					stop
+				chance of 10%:
+					drop a crafting table
+					stop
+				chance of 10%:
+					drop a empty map
+					stop
+				chance of 10%:
+					drop a lead
+					stop
+				chance of 10%:
+					drop a steak
+					stop
+				send "&aYou recieved a common drop"
+                                    

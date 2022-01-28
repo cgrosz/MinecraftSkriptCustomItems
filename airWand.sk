@@ -1,0 +1,88 @@
+import:
+    us.donut.skuniversal.griefprevention.GriefPreventionHook
+    java.util.ArrayList
+
+#player needs to /trust themselves in thier own claimes to use the items
+#wont be able to use the item in unclaimed land
+function playerIsTrusted(player: player, location: location) :: boolean:
+    # broadcast "1"
+    set {_ids::*} to ids of the claims at {_location} 
+    if {_ids::*} is set:
+        # broadcast "2"
+        set {_claim} to GriefPreventionHook.getClaim({_ids::1})
+        # broadcast "%{_claim}%"
+        if {_claim} is set:
+            # broadcast "3"
+            set {_trusted} to new ArrayList()
+            {_claim}.getPermissions({_trusted}, new ArrayList(), new ArrayList(), and new ArrayList())
+            # broadcast "%...{_trusted}%"
+            loop ...{_trusted}:
+                if "%loop-value%" is {_player}'s uuid:
+                    return true
+            return false
+    else if {_ids::*} is not set:
+        return true
+	
+
+#function playerNotInUnownedClaim(player: player, location: location) :: boolean :
+#	broadcast "1"
+#	set {_ids::*} to ids of the claims at {_location}
+#	if 
+
+			
+on rightclick with blaze rod:
+	if playerIsTrusted(player,event-block) is true:
+		if lore of player's held item contains "&aRight Click &7to make blocks disappear... forever...":
+			set {break} to false
+			play mob spawner flames at location of event-block
+			wait 2 ticks
+			play mob spawner flames at location of event-block
+			wait 8 ticks
+			if event-block is bedrock:
+				set {break} to true
+			if event-block is chest:
+				set {break} to true
+			if event-block is shulker box:
+				set {break} to true
+			if event-block is white shulker box:
+				set {break} to true
+			if event-block is orange shulker box:
+				set {break} to true
+			if event-block is magenta shulker box:
+				set {break} to true
+			if event-block is light blue shulker box:
+				set {break} to true
+			if event-block is yellow shulker box:
+				set {break} to true
+			if event-block is lime shulker box:
+				set {break} to true
+			if event-block is pink shulker box:
+				set {break} to true
+			if event-block is gray shulker box:
+				set {break} to true
+			if event-block is light gray shulker box:
+				set {break} to true
+			if event-block is cyan shulker box:
+				set {break} to true
+			if event-block is purple shulker box:
+				set {break} to true
+			if event-block is blue shulker box:
+				set {break} to true
+			if event-block is brown shulker box:
+				set {break} to true
+			if event-block is green shulker box:
+				set {break} to true
+			if event-block is red shulker box:
+				set {break} to true
+			if event-block is black shulker box:
+				set {break} to true
+			if event-block is barrier:
+				set {break} to true
+			if event-block is command block:
+				set {break} to true
+			if {break} is false:
+				if world is set:
+					log "%player% used Air Wand in %world% at location %location of player%" #ping %player's ping%" to "Spawner-%year%-%{_month}%.log
+				set event-block to air
+
+                       

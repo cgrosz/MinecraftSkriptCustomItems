@@ -1,0 +1,8 @@
+every 10 seconds in "world":
+	loop all players:
+		if line 2 of lore of loop-player's off hand item contains "&3Torn from the corpse of a mighty dragon!":
+			apply luck 2 to the loop-player for 10 seconds
+		else if line 2 of lore of loop-player's held item contains "&3Torn from the corpse of a mighty dragon!":
+			apply luck 2 to the loop-player for 10 seconds
+		else if line 2 of lore of loop-player's helmet contains "&3Torn from the corpse of a mighty dragon!":
+			apply luck 2 to the loop-player for 10 seconds

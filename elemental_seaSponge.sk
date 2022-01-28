@@ -1,0 +1,33 @@
+on place of sponge:
+    if line 1 of lore of player's held item contains "&bThis sponge dries itself!":
+        cancel event
+        if {cooldown.seasponge.%player%} is not set:
+            set {cooldown.seasponge.%player%} to false
+        if {cooldown.seasponge.%player%} is false:
+            set {cooldown.seasponge.%player%} to true
+            if player can build at event-block:
+                loop blocks in radius 4 around event-block:
+                    if player can build at loop-block:
+                        loop-block is equal to water
+                        set loop-block to air
+            wait 3 minutes
+            set {cooldown.seasponge.%player%} to false
+        else if {cooldown.seasponge.%player%} is true:
+            send "&7You need to wait 3 minutes for your Sea Sponge to dry out!"
+    else if line 1 of lore of player's off hand item contains "&bThis sponge dries itself!":
+        cancel event
+        if {cooldown.seasponge.%player%} is not set:
+            set {cooldown.seasponge.%player%} to false
+        if {cooldown.seasponge.%player%} is false:
+            set {cooldown.seasponge.%player%} to true
+            if player can build at event-block:
+                loop blocks in radius 4 around event-block:
+                    if player can build at loop-block:
+                        loop-block is equal to water
+                        set loop-block to air
+            wait 3 minutes
+            set {cooldown.seasponge.%player%} to false
+        else if {cooldown.seasponge.%player%} is true:
+            send "&7You need to wait 3 minutes for your Sea Sponge to dry out!"
+
+        

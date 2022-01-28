@@ -1,0 +1,279 @@
+on damage:
+	if victim is not player:
+		victim is not ender dragon
+		victim is not villager
+		victim is not drowned
+		victim is not armor stand
+		victim is not item frame
+		if attacker is a player:
+			#name of attacker's tool is "&c&lPokéball":
+			if line 6 of the lore of attacker's tool is "&9Empty":
+				cancel event
+				set line 6 of the lore of attacker's tool to "&9Captured: %victim%"
+				delete the victim
+				send "&r&7You captured a %victim%!" to the attacker
+
+on rightclick with heart of the sea:
+	#if name of player's tool is "&c&lPokéball":
+	if line 6 of lore of player's tool is not "&9Empty":
+		if event-block is not set:
+			stop trigger
+		if event-block is water:
+			stop trigger
+		if event-block is entity:
+			stop trigger
+		if block above event-block is set:
+			if block above event-block is not water:
+				if block above event-block is not air:
+					stop
+		set {_lore::*} to line 6 of lore of player's tool split at ": "
+		set {_mob} to {_lore::2}
+		#broadcast "%{_lore::*}%"
+		#broadcast "%{_mob}%"
+		if {_mob} is "cow":
+			spawn cow above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "cod":
+			spawn cod above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "bat":
+			spawn bat above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "blaze":
+			spawn blaze above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "iron golems":
+			spawn iron golems above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "damageable mob":
+			spawn damageable mob above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "cave spider":
+			spawn cave spider above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "cat":
+			spawn cat above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "creeper":
+			spawn creeper above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "dolphin":
+			spawn dolphin above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "donkey":
+			spawn donkey above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+# ^^9^^
+		if {_mob} is "elder guardian":
+			spawn elder guardian above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "enderman":
+			spawn enderman above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "endermite":
+			spawn endermite above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "evoker":
+			spawn evoker above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "fox":
+			spawn fox above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "ghast":
+			spawn ghast above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "normal guardian":
+			spawn normal guardian above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "horse":
+			spawn horse above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+# ^^18^^
+		if {_mob} is "husk":
+			spawn husk above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "llama":
+			spawn llama above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "magma cube":
+			spawn magma cube above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "mooshroom":
+			spawn mooshroom above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "mule":
+			spawn mule above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "ocelot":
+			spawn ocelot above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "panda":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn panda above event-block
+		if {_mob} is "parrot":
+			spawn parrot above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "phantom":
+			spawn phantom above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+# ^^27^^
+		if {_mob} is "pig":
+			spawn pig above event-block
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+		if {_mob} is "pillager":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn pillager above event-block
+		if {_mob} is "polar bear":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn polar bear above event-block
+		if {_mob} is "puffer fish":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn puffer fish above event-block
+		if {_mob} is "rabbit":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn rabbit above event-block
+		if {_mob} is "ravager":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn ravager above event-block
+		if {_mob} is "salmon":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn salmon above event-block
+		if {_mob} is "sheep":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn sheep above event-block
+		if {_mob} is "shulker":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn shulker above event-block
+# ^^36^^
+		if {_mob} is "silverfish":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn silverfish above event-block
+		if {_mob} is "skeleton":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn skeleton above event-block
+		if {_mob} is "skeleton horse":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn skeleton horse above event-block
+		if {_mob} is "slime":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn slime above event-block
+		if {_mob} is "spider":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn spider above event-block
+		if {_mob} is "squid":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn squid above event-block
+		if {_mob} is "stray":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn stray above event-block
+		if {_mob} is "trader llama":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn trader llama above event-block
+		if {_mob} is "tropical fish":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn tropical fish above event-block
+# ^^45^
+		if {_mob} is "turtle":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn turtle above event-block
+		if {_mob} is "vex":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn vex above event-block
+		if {_mob} is "red fox":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn red fox above event-block
+		if {_mob} is "chicken":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn chicken above event-block
+		if {_mob} is "vindicator":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn vindicator above event-block
+		if {_mob} is "wandering trader":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn wandering trader above event-block
+		if {_mob} is "witch":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn witch above event-block
+# ^^63^^
+		if {_mob} is "wither skeleton":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn wither skeleton above event-block
+		if {_mob} is "wolf":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn wolf above event-block
+		if {_mob} is "zombie":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn zombie above event-block
+		if {_mob} is "zombie pigman":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn zombie pigman above event-block
+		if {_mob} is "zombie villager":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn zombie villager above event-block
+		if {_mob} is "undead horse":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn undead horse above event-block
+# TOTAL : 71
+		if {_mob} is "bee":
+			set line 6 of the lore of player's tool to "&9Empty"
+			send "&r&7You released a %{_mob}%!"
+			spawn bee above event-block

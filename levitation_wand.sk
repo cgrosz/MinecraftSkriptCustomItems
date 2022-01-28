@@ -1,0 +1,14 @@
+#Name: Levitation Wand
+#Effect: Applies levitation to a player, not mob, on hit. Unplaceable
+#Cooldown: 5 Seconds
+
+on damage:
+    if line 1 of lore of attacker's held item contains "test levi lore":
+        if victim is a player:
+            if victim does not have levitation:
+                apply levitation to the victim for 5 seconds
+                #log "%player% (%player's uuid%) used Levitation Wand in %world% at location %location of player% to 'Levitation_Wand_Uses.log'"
+
+on place:
+    if line 1 of lore of event-block contains "test levi lore":
+        cancel event

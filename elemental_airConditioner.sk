@@ -1,0 +1,26 @@
+every 10 seconds in "world":
+    loop all players:
+        if line 1 of lore of loop-player's held item contains "&9Hold this to make it snow!":
+            loop blocks in radius 3 around loop-player:
+                if loop-player can build at loop-block:
+                    if loop-block is solid:
+                        if block above loop-block is air:
+                            set block above loop-block to snow layer
+        else if line 1 of lore of loop-player's off hand item contains "&9Hold this to make it snow!":
+            loop blocks in radius 3 around loop-player:
+                if loop-player can build at loop-block:
+                    if loop-block is solid:
+                        if block above loop-block is air:
+                            set block above loop-block to snow layer
+
+on place of player head:
+    if line 1 of lore of player's held item contains "&9Hold this to make it snow!":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&9Hold this to make it snow!":
+        cancel event
+
+on place of player wall head:
+    if line 1 of lore of player's held item contains "&9Hold this to make it snow!":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&9Hold this to make it snow!":
+        cancel event

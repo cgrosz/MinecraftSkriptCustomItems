@@ -1,0 +1,31 @@
+on drop:
+    if line 1 of lore of event-item contains "&aDrop this item to summon":
+        loop players in radius 5 around player:
+            if player can build at loop-player's location:
+                if loop-player is not player:
+                    push loop-player up at speed 0.6
+                    push loop-player north at speed 1
+                    wait 2 ticks
+                    push loop-player up at speed 0.3
+                    push loop-player east at speed 1
+                    wait 2 ticks
+                    push loop-player up at speed 0.3
+                    push loop-player south at speed 1
+                    wait 2 ticks
+                    push loop-player up at speed 0.3
+                    push loop-player west at speed 1
+                    wait 2 ticks
+                    push loop-player up at speed 0.3
+                    push loop-player north at speed 1
+                    wait 2 ticks
+                    push loop-player up at speed 0.3
+                    push loop-player east at speed 1
+                    wait 2 ticks
+                    push loop-player up at speed 0.3
+                    push loop-player south at speed 1
+
+on place of hopper:
+    if line 1 of lore of player's held item contains "&aDrop this item to summon":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&aDrop this item to summon":
+        cancel event

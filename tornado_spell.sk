@@ -1,0 +1,39 @@
+on right click:
+    if line 1 of lore of event-item contains "&7tornado":
+        if {cooldown.tornado_wand.%player's uuid%} isn't set:
+            set {cooldown.tornado_wand.%player%} to false
+        if {cooldown.tornado_wand.%player's uuid%} is false:
+            set {cooldown.tornado_wand.%player%} to true
+            loop players in radius 5 around player:
+                if player can build at loop-player's location:
+                    if loop-player is not player:
+                        push loop-player up at speed 0.6
+                        push loop-player north at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player east at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player south at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player west at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player north at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player east at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player south at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player west at speed 1
+                        wait 2 ticks
+                        push loop-player up at speed 0.3
+                        push loop-player north at speed 1
+            wait 60 seconds
+            set {cooldown.tornado_wand.%player's uuid%} to false
+        else if {cooldown.tornado_wand.%player's uuid%} is true:
+            send "&7This item needs 60 seconds to cooldown." to player

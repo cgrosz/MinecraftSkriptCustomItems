@@ -1,0 +1,78 @@
+on right click:
+	if line 1 of lore of player's held item contains "&9&oOff to Neverland!":
+		cancel event
+		set {_x} to the x coordinate of location of event-entity
+		set {_y} to the y coordinate of location of event-entity
+		set {_z} to the z coordinate of location of event-entity
+		#make console execute "summon cow %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+
+		if event-entity is cow:
+			cancel event
+			delete event-entity
+			make console execute "summon cow %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is chicken:
+			cancel event
+			delete event-entity
+			make console execute "summon chicken %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is donkey:
+			cancel event
+			delete event-entity
+			make console execute "summon donkey %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is fox:
+			cancel event
+			delete event-entity
+			make console execute "summon fox %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is horse:
+			cancel event
+			delete event-entity
+			make console execute "summon horse %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is mooshroom:
+			cancel event
+			delete event-entity
+			make console execute "summon mooshroom %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is mule:
+			cancel event
+			delete event-entity
+			make console execute "summon mule %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is pig:
+			cancel event
+			delete event-entity
+			make console execute "summon pig %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is sheep:
+			cancel event
+			delete event-entity
+			make console execute "summon sheep %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is turtle:
+			cancel event
+			delete event-entity
+			make console execute "summon turtle %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is ocelot:
+			cancel event
+			delete event-entity
+			make console execute "summon ocelet %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is polar bear:
+			cancel event
+			delete event-entity
+			make console execute "summon polar_bear %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is rabbit:
+			cancel event
+			delete event-entity
+			make console execute "summon rabbit %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is wolf:
+			cancel event
+			delete event-entity
+			make console execute "summon wolf %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+		else if event-entity is llama:
+			cancel event
+			delete event-entity
+			make console execute "summon llama %{_x}% %{_y}% %{_z}% {Age:-999999999, ForcedAge:-999999999}"
+
+
+# this is the correct code to stop placement of rares but allow people to open
+# chests/interact with blocks while holding them
+on place of pumpkin stem:
+	#send "%event-item%"
+	if line 1 of lore of player's held item contains "&9&oOff to Neverland!":
+		cancel event
+	else if line 1 of lore of player's off hand item contains "&9&oOff to Neverland!":
+		cancel event

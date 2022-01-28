@@ -1,0 +1,11 @@
+on place of red concrete powder:
+    if line 1 of lore of player's held item contains "&7Straight from the Heart of LootCraftMC":
+        cancel event
+    if line 1 of lore of player's off hand item contains "&7Straight from the Heart of LootCraftMC":
+        cancel event
+
+on place of black concrete powder:
+    if line 1 of lore of player's held item contains "&7Straight from the Heart of LootCraftMC":
+        cancel event
+    if line 1 of lore of player's off hand item contains "&7Straight from the Heart of LootCraftMC":
+        cancel event

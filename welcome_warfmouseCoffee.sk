@@ -1,0 +1,20 @@
+on right click:
+	if line 2 of lore of player's held item is "&9&oA grande caramel macchiato to keep you going...":
+		if event-block is not chest or shulker box:
+			#cancel event
+			if {cooldown.coffee.%player%} is not set:
+				set {cooldown.coffee.%player%} to false
+			if {cooldown.coffee.%player%} is false:
+				set {cooldown.coffee.%player%} to true
+				apply speed 3 to the player for 1 minute
+				wait 1 hour
+				set {cooldown.coffee.%player%} to false
+
+# this is the correct code to stop placement of rares but allow people to open
+# chests/interact with blocks while holding them
+on place of empty flower pot:
+	#send "%event-item%"
+	if line 2 of lore of player's held item contains "&9&oA grande caramel macchiato to keep you going...":
+		cancel event
+	else if line 2 of lore of player's off hand item contains "&9&oA grande caramel macchiato to keep you going...":
+		cancel event

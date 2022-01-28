@@ -1,0 +1,9 @@
+on right click:
+    if line 1 of lore of player's held item contains "&7Right Click to open a crafting window.":
+        open workbench window to the player
+
+on place of crafting table:
+    if line 1 of lore of player's held item contains "&7Right Click to open a crafting window.":
+        cancel event
+    if line 1 of lore of player's off hand item contains "&7Right Click to open a crafting window.":
+        cancel event

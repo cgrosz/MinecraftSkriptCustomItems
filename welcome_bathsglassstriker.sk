@@ -1,0 +1,39 @@
+import:
+    us.donut.skuniversal.griefprevention.GriefPreventionHook
+    java.util.ArrayList
+
+#player needs to /trust themselves in thier own claimes to use the items
+#wont be able to use the item in unclaimed land
+function playerIsTrustedInClaim(player: player, location: location) :: boolean:
+    # broadcast "1"
+    set {_ids::*} to ids of the claims at {_location}
+    if {_ids::*} is set:
+        # broadcast "2"
+        set {_claim} to GriefPreventionHook.getClaim({_ids::1})
+        # broadcast "%{_claim}%"
+        if {_claim} is set:
+            # broadcast "3"
+            set {_trusted} to new ArrayList()
+            {_claim}.getPermissions({_trusted}, new ArrayList(), new ArrayList(), and new ArrayList())
+            # broadcast "%...{_trusted}%"
+            loop ...{_trusted}:
+                if "%loop-value%" is {_player}'s uuid:
+                    return true
+            return false
+
+on left click with flint and steel:
+
+	if line 1 of lore of player's held item contains "&aRight Click &fto bleach glass":
+		event-block is glass or brown stained glass or white stained glass or light gray stained glass or gray stained glass or black stained glass or red stained glass or pink stained glass or orange stained glass or yellow stained glass or green stained glass or lime stained glass or blue stained glass or cyan stained glass or light blue stained glass or purple stained glass or magenta stained glass
+		if playerIsTrustedInClaim(player,event-block) is true:
+			set event-block to air
+
+on right click with flint and steel:
+	if line 1 of lore of player's held item contains "&aRight Click &fto bleach glass":
+		cancel event
+		event-block is brown stained glass or white stained glass or light gray stained glass or gray stained glass or black stained glass or red stained glass or pink stained glass or orange stained glass or yellow stained glass or green stained glass or lime stained glass or blue stained glass or cyan stained glass or light blue stained glass or purple stained glass or magenta stained glass
+		if playerIsTrustedInClaim(player,event-block) is true:
+			set block to glass
+on right click:
+	if line 1 of lore of player's off hand item contains "&aRight Click &fto bleach glass":
+		cancel event

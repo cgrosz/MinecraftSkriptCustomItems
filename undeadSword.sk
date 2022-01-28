@@ -1,0 +1,5 @@
+on tool break:
+	if lore of player's held item contains "&cDid 'ya miss me?... I hope not &6*^_^*":
+		wait 15 seconds
+		give player diamond sword of sharpness 5 with damage value 1560 named "&6⋗ ⋫ &4U&7n&4d&7e&4a&7d &4S&7w&4o&7r&4d &7o&4f &7G&4r&7a&4c&7e &6⋪ ⋖" with lore "&cDid 'ya miss me?... I hope not &6*^_^*" 
+   

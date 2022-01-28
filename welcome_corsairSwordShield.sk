@@ -1,0 +1,26 @@
+every 10 seconds in "world":
+	loop all players:
+		if line 4 of lore of loop-player's off hand item contains "&bThis shield provides better protection from earthly attacks":
+			apply slowness 1 to the loop-player for 10 seconds
+			apply resistance 1 to the loop-player for 10 seconds
+
+on damage:
+	if line 1 of lore of attacker's held item contains "&7Corsair Set Effect":
+		if line 4 of lore of attacker's off hand item contains "&bThis shield provides better protection from earthly attacks":
+			if the victim does not have slowness:
+				apply slowness 1 to the victim for 3 seconds
+			if the victim does not have jump:
+				apply jump 2 to the victim for 3 seconds
+
+on death:
+	victim is player
+	if line 1 of lore of attacker's held item contains "&7Corsair Set Effect":
+		set death message to ""
+
+every 10 seconds in "world":
+	loop all players:
+		if line 1 of lore of loop-player's held item contains "&3Corsair Set Effect":
+			if line 4 of lore of loop-player's off hand item contains "&bThis shield provides better protection from earthly attacks":
+				drawComplexSpiral particle "redstone", center loop-player, id "%loop-player%", rainbowMode true, clockwise true, scan true, radius 1, density 50, height 6, effectMod .05, start 0, visibleRange 30
+				wait 9 seconds
+				stopEffect "%loop-player%"

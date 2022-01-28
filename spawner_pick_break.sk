@@ -1,0 +1,6 @@
+on break of mob spawner:
+    if line 1 of lore of player's held item contains "&7Spawner pick":
+        set {_randomChanceToBreak} to a random integer between 1 and 11
+        if {_randomChanceToBreak} = 4:
+            set player's held item to air
+            send "&7Unlucky, your pickaxe broke after mining the spawner" to player

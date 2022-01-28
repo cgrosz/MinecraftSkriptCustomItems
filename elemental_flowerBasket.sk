@@ -1,0 +1,46 @@
+on right click:
+    if lore of player's held item contains "&aRight Click &eon grass to plant flowers!":
+        if event-block is grass block:
+            if block above event-block is air:
+                chance of 10%:
+                    set block above event-block to dandelion
+                    stop
+                chance of 10%:
+                    set block above event-block to poppy
+                    stop
+                chance of 10%:
+                    set block above event-block to blue orchid
+                    stop
+                chance of 10%:
+                    set block above event-block to allium
+                    stop
+                chance of 10%:
+                    set block above event-block to azure bluet
+                    stop
+                chance of 10%:
+                    set block above event-block to red tulip
+                    stop
+                chance of 10%:
+                    set block above event-block to orange tulip
+                    stop
+                chance of 10%:
+                    set block above event-block to white tulip
+                    stop
+                chance of 10%:
+                    set block above event-block to pink tulip
+                    stop
+                chance of 10%:
+                    set block above event-block to oxeye daisy
+                    stop
+
+on place of player head:
+    if line 1 of lore of player's held item contains "&aRight Click &eon grass to plant flowers!":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&aRight Click &eon grass to plant flowers!":
+        cancel event
+
+on place of player wall head:
+    if line 1 of lore of player's held item contains "&aRight Click &eon grass to plant flowers!":
+        cancel event
+    else if line 1 of lore of player's off hand item contains "&aRight Click &eon grass to plant flowers!":
+        cancel event

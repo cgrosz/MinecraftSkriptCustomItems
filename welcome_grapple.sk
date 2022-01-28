@@ -1,0 +1,13 @@
+on rightclick with fishing rod:
+	if line 1 of lore of player's tool is "&aRight Click &fto throw the grappling hook":
+		if {grapple.%player%} is not set:
+			set {grapple.%player%} to true
+			set {grapple.d.%player%} to horizontal facing of player
+			wait 3 seconds
+			delete {grapple.%player%.}
+		else:
+			if block below player is air:
+				stop
+			delete {grapple.%player%}
+			push player upwards at speed 1
+			push player {grapple.d.%player%} with force 2

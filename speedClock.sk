@@ -1,0 +1,4 @@
+every 10 seconds in "world":
+    loop all players:
+        if line 1 of lore of loop-player's held item contains "speed clock":
+            apply speed 2 to the loop-player for 10 seconds
